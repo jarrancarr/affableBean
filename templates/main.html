@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{page "head"}}		
+
+		<script>
+			$(document).ready( function(){
+				{{range index .Site.Script "script"}}
+					{{.}}
+				{{end}}
+			});
+		</script>
+    </head>
+
+    <body>
+        <div id="demoNote" class="noteBubble">
+            <p>This is the demo application used with the
+            <a href="http://netbeans.org/kb/docs/javaee/ecommerce/intro.html">NetBeans E-commerce Tutorial</a>.</p>
+            <p class="smallText">The interface was tested on Firefox and Safari 5 browsers, Opera 11 and Chrome 15.</p>
+        </div>
+        <div id="adminNote" class="noteBubble">
+            <p>To access the application's admin console, <a href="/AffableBean/admin">click here</a>.</p>
+            <p>Enter <strong>nbuser</strong> / <strong>secret</strong> for username / password.</p>
+        </div>
+        <div id="main">
+            <div id="header">
+                <div id="widgetBar">
+					<div class="headerWidget">english|
+						<span class="bubble">
+							<a href="chooseLanguage?language=cs">česky</a>
+						</span>
+					</div>
+					<div class="headerWidget"></div>
+					<div class="headerWidget" id="viewCart">
+						<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
+						<span class="horizontalMargin">0 items</span>
+					</div>
+				</div>
+				<a href="/AffableBean/">
+					<img src="/img/logo.png" id="logo" alt="Affable Bean logo">
+				</a>
+				<img src="/img/logoText.png" id="logoText" alt="the affable bean">
+			</div>
+			<div id="indexLeftColumn">
+			    <div id="welcomeText">
+			        <p style="font-size: larger">Welcome to the online home of the Affable Bean Green Grocer.</p>
+			        <p>Our unique home delivery service brings you fresh organic produce, dairy, meats, breads and other delicious and healthy items direct to your doorstep.</p>
+			    </div>
+			</div>
+			<div id="indexRightColumn">
+				{{page "category" "index>>0"}}
+				{{page "category" "index>>1"}}
+				{{page "category" "index>>2"}}
+				{{page "category" "index>>3"}}
+			</div>
+			<div id="footer">
+				<br>
+				<hr id="footerDivider">
+				<p id="footerText" class="reallySmallText">
+				<a href="#">Privacy Policy</a>&nbsp;&nbsp;::&nbsp;&nbsp;
+				<a href="#">Contact</a>&nbsp;&nbsp;&copy;&nbsp;&nbsp;
+				2010 the affable bean</p>
+			</div>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{page "head"}}		
+		{{ajax  "var:selectedProduct" "trigger:select-Meats" "handler:products" "target:products" "data:'selectedCategory':'Meats'"}}
+
+		<script>
+			$(document).ready( function(){
+				{{range index .Site.Script "script"}}
+					{{.}}
+				{{end}}
+			});
+		</script>
+    </head>
+
+    <body>
+        <div id="demoNote" class="noteBubble">
+            <p>This is the demo application used with the
+            <a href="http://netbeans.org/kb/docs/javaee/ecommerce/intro.html">NetBeans E-commerce Tutorial</a>.</p>
+            <p class="smallText">The interface was tested on Firefox and Safari 5 browsers, Opera 11 and Chrome 15.</p>
+        </div>
+        <div id="adminNote" class="noteBubble">
+            <p>To access the application's admin console, <a href="/AffableBean/admin">click here</a>.</p>
+            <p>Enter <strong>nbuser</strong> / <strong>secret</strong> for username / password.</p>
+        </div>
+        <div id="main">
+            <div id="header">
+                <div id="widgetBar">
+					<div class="headerWidget">english|
+						<span class="bubble">
+							<a href="chooseLanguage?language=cs">česky</a>
+						</span>
+					</div>
+					<div class="headerWidget"></div>
+					<div class="headerWidget" id="viewCart">
+						<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
+						<span class="horizontalMargin">0 items</span>
+					</div>
+				</div>
+				<a href="/AffableBean/">
+					<img src="/img/logo.png" id="logo" alt="Affable Bean logo">
+				</a>
+				<img src="/img/logoText.png" id="logoText" alt="the affable bean">
+			</div>
+			<div id="indexLeftColumn">
+				<div class="category">
+					{{range index .Data "category"}}
+						{{.}}
+					{{end}}
+				</div>
+			</div>
+			<div id="indexRightColumn">
+				<p id="categoryTitle">dairy</p>
+				<table id="productTable">
+					{{range index .Body "category" }}
+						<tr class="lightBlue">
+	                		<td>
+	                    		<img src="img/products/{{.}}.png" alt="milk">
+							</td>
+							<td>milk
+		                    	<br>
+			                    <span class="smallText">semi skimmed (1L)</span>
+		                	</td>
+							<td>&euro; 1.70</td>
+							<td>
+								<form action="addToCart" method="post">
+	                        		<input type="hidden" name="productId" value="1">
+	                        		<input type="submit" name="submit" value="add to cart">
+	                    		</form>
+	                		</td>
+	            		</tr>
+					{{end}}
+				</table>
+			</div>
+			<div id="footer">
+				<br>
+				<hr id="footerDivider">
+				<p id="footerText" class="reallySmallText">
+				<a href="#">Privacy Policy</a>&nbsp;&nbsp;::&nbsp;&nbsp;
+				<a href="#">Contact</a>&nbsp;&nbsp;&copy;&nbsp;&nbsp;
+				2010 the affable bean</p>
+			</div>
+		</div>
+    </body>
+</html>
