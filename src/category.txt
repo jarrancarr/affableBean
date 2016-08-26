@@ -1,3 +1,1 @@
 Category>>meats dairy bakery "fruit & veg"
-meats>>steak beef chicken lamb
-dairy>>milk cheese yoghurt

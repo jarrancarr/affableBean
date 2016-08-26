@@ -54,14 +54,13 @@ func setup() {
 	// pages
 	main := aBean.AddPage("AffableBean", "main", "/")
 	
-	for _, cat := range []string{"Meats", "Dairy", "Bakery", "Fruits&Veg"} {
-		main.AddData("category", `<div class="categoryButton"><span class="categoryText">`+cat+`</span></div>`)
-	}
 	
 	main.AddBypassSiteProcessor("secure")
 		
 		
 	products := aBean.AddPage("products", "products", "/AffableBean/category")
-	
+	for _, cat := range []string{"Meats", "Dairy", "Bakery", "Fruits&Veg"} {
+		products.AddData("category", `<div class="categoryButton"><span class="categoryText">`+cat+`</span></div>`)
+	}
 	products.AddBypassSiteProcessor("secure")
 }

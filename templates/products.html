@@ -42,22 +42,22 @@
 				</a>
 				<img src="/img/logoText.png" id="logoText" alt="the affable bean">
 			</div>
-			<div id="indexLeftColumn">
+			<div id="categoryLeftColumn">
 				<div class="category">
 					{{range index .Data "category"}}
 						{{.}}
 					{{end}}
 				</div>
 			</div>
-			<div id="indexRightColumn">
-				<p id="categoryTitle">dairy</p>
+			<div id="categoryRightColumn">
+				<p id="categoryTitle">{{param "category"}}</p>
 				<table id="productTable">
-					{{range index .Body "category" }}
+					{{range getParamList "category" }}
 						<tr class="lightBlue">
 	                		<td>
-	                    		<img src="img/products/{{.}}.png" alt="milk">
+	                    		<img src="/img/products/{{.}}.png" alt="{{.}}">
 							</td>
-							<td>milk
+							<td>{{.}}
 		                    	<br>
 			                    <span class="smallText">semi skimmed (1L)</span>
 		                	</td>
