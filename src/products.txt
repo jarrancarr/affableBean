@@ -1,4 +1,6 @@
-Title>>>The Affable Bean Green Grocer
-meats>>"organic meat patties" "parma ham" "chicken leg" sausages
-dairy>>milk cheese butter "free range eggs"
-bakery>>"sunflower seed loaf" "sesame seed bagel" "pumpkin seed bun" "chocolate cookies"
+Title>>The Affable Bean Green Grocer
+Category>>Meats Dairy Bakery "Fruits & Veg"
+0>>"organic meat patties" "parma ham" "chicken leg" sausages
+1>>milk cheese butter "free range eggs"
+2>>"sunflower seed loaf" "sesame seed bagel" "pumpkin seed bun" "chocolate cookies"
+3>>"corn on the cob" "red currants" broccoli "seedless watermelon"

@@ -246,6 +246,11 @@ label.error {
     border:solid 1px #555;
 }
 
+.debug {
+	align: left;
+	text-align: left;
+}
+
 
 /* category page styles */
 #categoryLeftColumn {
