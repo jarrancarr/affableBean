@@ -9,6 +9,8 @@ import (
 )
 
 var aBean *website.Site
+var acs *website.AccountService
+var ecs *ecommerse.ECommerseService
 
 func main() {
 	website.ResourceDir = ".."
@@ -25,28 +27,9 @@ func setup() {
 	aBean = website.CreateSite("AffableBean", "localhost:8070")
 	addScripts();
 	addMenus();
-	
-	// services
-	acs := website.CreateAccountService()
-	aBean.AddService("account", acs)
-	aBean.AddSiteProcessor("secure", acs.CheckSecure)
-	ecs := ecommerse.CreateService(acs)
-	aBean.AddService("ecommerse", ecs)
-
+	addServices();
+	addPages();
 	addTemplatePages();
-
-	// pages
-	main := aBean.AddPage("AffableBean", "main", "/")
-	main.AddBypassSiteProcessor("secure")
-		
-	products := aBean.AddPage("products", "products", "/AffableBean/product")
-	products.AddBypassSiteProcessor("secure")
-	products.AddPostHandler("addToCart", ecs.AddToCart)
-	for index, cat := range []string{"Meats", "Dairy", "Bakery", "Fruit & Veg"} {
-		products.AddData("category", `<a class="categoryButton"  href="/AffableBean/product?category=`+strconv.Itoa(index)+`" ><span class="categoryText">`+cat+`</span></a>`)
-	}
-	ecs.AddPage("products", products)
-	addProducts(ecs)
 	
 	//viewCart := aBean.AddPage("viewCart", "viewCart", "/AffableBean/viewCart")
 	//viewCart.AddBypassSiteProcessor("secure")
@@ -105,4 +88,26 @@ func addProducts(ecs *ecommerse.ECommerseService) {
 	ecs.AddProduct("Fruits & Veg", "red currants", "150g", "red currants.png", 249, 14)
 	ecs.AddProduct("Fruits & Veg", "broccoli", "500g", "broccoli.png", 129, 14)
 	ecs.AddProduct("Fruits & Veg", "seedless watermelon", "250g", "seedless watermelon.png", 149, 14)
+}
+
+func addServices() {
+	acs = website.CreateAccountService()
+	aBean.AddService("account", acs)
+	aBean.AddSiteProcessor("secure", acs.CheckSecure)
+	ecs = ecommerse.CreateService(acs)
+	aBean.AddService("ecommerse", ecs)
+}
+
+func addPages() {
+	main := aBean.AddPage("AffableBean", "main", "/")
+	main.AddBypassSiteProcessor("secure")
+
+	products := aBean.AddPage("products", "products", "/AffableBean/product")
+	products.AddBypassSiteProcessor("secure")
+	products.AddPostHandler("addToCart", ecs.AddToCart)
+	for index, cat := range []string{"Meats", "Dairy", "Bakery", "Fruit & Veg"} {
+		products.AddData("category", `<a class="categoryButton"  href="/AffableBean/product?category=`+strconv.Itoa(index)+`" ><span class="categoryText">`+cat+`</span></a>`)
+	}
+	ecs.AddPage("products", products)
+	addProducts(ecs)
 }
