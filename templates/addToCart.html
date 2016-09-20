@@ -22,24 +22,7 @@
             <p>Enter <strong>nbuser</strong> / <strong>secret</strong> for username / password.</p>
         </div>
         <div id="main">
-            <div id="header">
-                <div id="widgetBar">
-					<div class="headerWidget">english|
-						<span class="bubble">
-							<a href="chooseLanguage?language=cs">česky</a>
-						</span>
-					</div>
-					<div class="headerWidget"></div>
-					<div class="headerWidget" id="viewCart">
-						<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
-						<span class="horizontalMargin">0 items</span>
-					</div>
-				</div>
-				<a href="/AffableBean/">
-					<img src="/img/logo.png" id="logo" alt="Affable Bean logo">
-				</a>
-				<img src="/img/logoText.png" id="logoText" alt="the affable bean">
-			</div>
+            {{page "header"}}
 			<div id="categoryLeftColumn">
 				{{range index .Data "category"}}
 					{{.}}
@@ -73,15 +56,7 @@
 					{{end}}
 				{{end}}
 			</div>
-			<div id="footer">
-				<br>
-				<hr id="footerDivider">
-				<p id="footerText" class="reallySmallText">
-				<a href="#">Privacy Policy</a>&nbsp;&nbsp;::&nbsp;&nbsp;
-				<a href="#">Contact</a>&nbsp;&nbsp;&copy;&nbsp;&nbsp;
-				2010 the affable bean</p>
-			</div>
-			{{debug}}
+			{{page "footer"}}
 		</div>
     </body>
 </html>

@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"strconv"
+	//"fmt"
 
 	"github.com/jarrancarr/website"
 	"github.com/jarrancarr/website/ecommerse"
@@ -23,16 +24,12 @@ func main() {
 }
 
 func setup() {
-	//website
-	aBean = website.CreateSite("AffableBean", "localhost:8070")
+	aBean = website.CreateSite("en","AffableBean", "localhost:8070")
 	addScripts();
 	addMenus();
 	addServices();
 	addPages();
 	addTemplatePages();
-	
-	//viewCart := aBean.AddPage("viewCart", "viewCart", "/AffableBean/viewCart")
-	//viewCart.AddBypassSiteProcessor("secure")
 }
 
 func addScripts() {
@@ -56,11 +53,16 @@ func addMenus() {
 		AddItem("English", "/lang?english").
 		AddItem("Spanish", "/lang?spanish").
 		Add("", "display: inline;", "")
+	
+	aBean.AddParamTriggerHandler("language",chooseLanguage)
 }
 
 func addTemplatePages() {
-	aBean.AddPage("head", "head", "")
+	aBean.AddPage("", "head", "")
+	aBean.AddPage("", "header", "")
+	aBean.AddPage("", "footer", "")
 	aBean.AddPage("category", "category", "")
+	aBean.AddPage("", "lang", "")
 }
 
 func addProducts(ecs *ecommerse.ECommerseService) {
@@ -110,4 +112,14 @@ func addPages() {
 	}
 	ecs.AddPage("products", products)
 	addProducts(ecs)
+	
+	viewCart := aBean.AddPage("viewCart", "viewCart", "/AffableBean/viewCart")
+	viewCart.AddBypassSiteProcessor("secure")
+	viewCart.AddParamTriggerHandler("clear",ecs.ClearCart)
 }
+
+func chooseLanguage(w http.ResponseWriter, r *http.Request, s *website.Session, p *website.Page) (string, error) {
+		s.Data["language"]=p.Param["language"]
+		http.Redirect(w,r,"#",302)
+		return "", nil
+	}

@@ -1,1 +1,3 @@
 Category>>Meats Dairy Bakery "Fruit & Veg"
+<<lang>>cs
+Category>>maso "mléčné výrobky" pečivo "ovoce a zeleniny"

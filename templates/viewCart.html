@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{page "head"}}	
+		<script>
+			$(document).ready( function(){
+				{{range index .Site.Script "script"}}
+					{{.}}
+				{{end}}
+			});
+		</script>
+    </head>
+
+    <body>
+        <div id="demoNote" class="noteBubble">
+            <p>This is the demo application used with the
+            <a href="http://netbeans.org/kb/docs/javaee/ecommerce/intro.html">NetBeans E-commerce Tutorial</a>.</p>
+            <p class="smallText">The interface was tested on Firefox and Safari 5 browsers, Opera 11 and Chrome 15.</p>
+        </div>
+        <div id="adminNote" class="noteBubble">
+            <p>To access the application's admin console, <a href="/AffableBean/admin">click here</a>.</p>
+            <p>Enter <strong>nbuser</strong> / <strong>secret</strong> for username / password.</p>
+        </div>
+        <div id="main">
+            {{page "header"}}
+			<div id="singleColumn">
+				<p>Your shopping cart contains 2 items.</p>
+				<div id="actionBar">
+					<a href="viewCart?clear=true" class="bubble hMargin">clear cart</a>
+					<a href="category" class="bubble hMargin">continue shopping</a>
+					<a href="checkout" class="bubble hMargin">proceed to checkout &#x279f;</a>
+				</div>
+				<h4 id="subtotal">subtotal:&euro; 4.09</h4>
+				<table id="cartTable">
+					<tr class="header">
+						<th>product</th>
+						<th>name</th>
+						<th>price</th>
+						<th>quantity</th>
+					</tr>
+					{{with $cart := get "ecommerse" "cart"}}
+						{{range $cart.Line}}
+							{{.Item.Name}}
+							<tr class="lightBlue">
+								<td><img src="/img/products/{{.Item.ImageName}}" alt="{{.Item.Name}}"></td>
+								<td>{{.Item.Name}}</td>
+								<td>&euro; {{.Item.Price}}<br><span class="smallText">{{.Item.Description}}</span></td>
+								<td>
+									<form action="updateCart" method="post">
+										<input type="hidden" name="product" value="{{.Item.Name}}">
+										<input type="text" maxlength="2" size="2" value="1" name="quantity" style="margin:5px">
+										<input type="submit" name="submit" value="update">
+									</form>
+								</td>
+							</tr>
+						{{end}}
+					{{end}}
+				</table>
+			</div>
+			{{page "footer"}}
+		</div>
+    </body>
+</html>

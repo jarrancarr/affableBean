@@ -4,3 +4,10 @@ Category>>Meats Dairy Bakery "Fruits & Veg"
 1>>milk cheese butter "free range eggs"
 2>>"sunflower seed loaf" "sesame seed bagel" "pumpkin seed bun" "chocolate cookies"
 3>>"corn on the cob" "red currants" broccoli "seedless watermelon"
+<<lang>>cs
+Title>>The Affable Bean Green Grocer
+Category>>maso "mléčné výrobky" pečivo "ovoce a zeleniny"
+0>>"kořeněné pirohy" "pršut" "pršut" klobásy
+1>>mléko sýr máslo "vejce z volných pastvin"
+2>>"slunečnicový chléb" "sezamová bageta" "semínková dýňová" "čokoládové sušenky"
+3>>"kukuřice" "červený rybíz" brokolice "meloun bez semínek"

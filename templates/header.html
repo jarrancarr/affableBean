@@ -1,0 +1,21 @@
+<div id="header">
+	<div id="widgetBar">
+		{{page "lang"}}
+		<div class="headerWidget"></div>
+		<div class="headerWidget" id="viewCart">
+			<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
+			{{with $numItems := service "ecommerse" "cart" "count" }}
+				<span class="horizontalMargin">{{$numItems}} items</span>
+				{{if eq $numItems "0"}}{{else}}
+					<a class="bubble" href="viewCart">
+						view cart
+					</a>
+				{{end}}
+			{{end}}
+		</div>
+	</div>
+	<a href="/AffableBean/">
+		<img src="/img/logo.png" id="logo" alt="Affable Bean logo">
+	</a>
+	<img src="/img/logoText.png" id="logoText" alt="the affable bean">
+</div>

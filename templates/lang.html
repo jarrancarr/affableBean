@@ -1,0 +1,25 @@
+<div class="headerWidget">
+	{{with $lang := session "language" }}
+		{{if eq $lang "en"}}
+			english
+		{{else}}
+			<span class="bubble">
+				<a href="chooseLanguage?language=en">english</a>
+			</span>
+		{{end}}
+		{{if eq $lang "cs"}}
+			česky
+		{{else}}
+			<span class="bubble">
+				<a href="chooseLanguage?language=cs">česky</a>
+			</span>
+		{{end}}
+		{{if eq $lang "fr"}}
+			french
+		{{else}}
+			<span class="bubble">
+				<a href="chooseLanguage?language=fr">french</a>
+			</span>
+		{{end}}
+	{{end}}
+</div>
