@@ -1,3 +1,7 @@
 Category>>Meats Dairy Bakery "Fruit & Veg"
 <<lang>>cs
 Category>>maso "mléčné výrobky" pečivo "ovoce a zeleniny"
+<<lang>>fr
+Category>>viandes laitier boulangerie "fruits et légumes"
+<<lang>>sp
+Category>>Carnes Panadería Lácteos "Frutas y verduras"

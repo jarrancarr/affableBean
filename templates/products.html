@@ -24,8 +24,26 @@
         <div id="main">
             {{page "header"}}
 			<div id="categoryLeftColumn">
-				{{range index .Data "category"}}
-					{{.}}
+				{{$lang := session "language" }}
+				{{if eq $lang "en"}}
+					{{range index .Data "category:en"}}
+						{{.}}
+					{{end}}
+				{{end}}
+				{{if eq $lang "cs"}}
+					{{range index .Data "category:cs"}}
+						{{.}}
+					{{end}}
+				{{end}}
+				{{if eq $lang "fr"}}
+					{{range index .Data "category:fr"}}
+						{{.}}
+					{{end}}
+				{{end}}
+				{{if eq $lang "sp"}}
+					{{range index .Data "category:sp"}}
+						{{.}}
+					{{end}}
 				{{end}}
 			</div>
 			<div id="categoryRightColumn">
@@ -33,11 +51,11 @@
 					{{with $category := body "Category" $pc}}
 						<p id="categoryTitle">{{$category}}</p>
 						<table id="productTable">
-							{{range getParamList "category" }}
+							{{range getList "category" }}
 								{{service "ecommerse" "product" "products" $category . }}
 								<tr class="lightBlue">
 			                		<td>
-			                    		<img src="/img/products/{{.}}.png" alt="{{.}}">
+			                    		<img src='/img/products/{{data $category "1" }}' alt='{{data $category "1" }}'>
 									</td>
 									<td>{{.}}
 				                    	<br>

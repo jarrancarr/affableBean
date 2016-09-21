@@ -15,10 +15,17 @@
 			</span>
 		{{end}}
 		{{if eq $lang "fr"}}
-			french
+			français
 		{{else}}
 			<span class="bubble">
-				<a href="chooseLanguage?language=fr">french</a>
+				<a href="chooseLanguage?language=fr">français</a>
+			</span>
+		{{end}}
+		{{if eq $lang "sp"}}
+			Español
+		{{else}}
+			<span class="bubble">
+				<a href="chooseLanguage?language=sp">Español</a>
 			</span>
 		{{end}}
 	{{end}}
