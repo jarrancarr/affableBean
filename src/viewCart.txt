@@ -1,1 +1,38 @@
-Title>>The Affable Bean Cart
+clear_cart>>"clear cart"
+continue_shopping>>"continue shopping"
+proceed_to_checkout>>"proceed to checkout"
+product>>product
+name>>name
+price>>price
+quantity>>quantity
+cart_count>>"Your shopping cart contains %s items."
+
+<<lang>>cs
+clear_cart>>"clear vozík"
+continue_shopping>>"pokračovat v nákupu"
+proceed_to_checkout>>"přistoupit k pokladně"
+product>>produkt
+name>>jméno
+price>>cena
+quantity>>množství
+cart_count>>"Váš nákupní košík obsahuje celkem %s položek."
+
+<<lang>>fr
+clear_cart>>"vider le panier"
+continue_shopping>>"continuer vos achats"
+proceed_to_checkout>>"passer à la caisse"
+product>>produit
+name>>prénom
+price>>prix
+quantity>>Quantité
+cart_count>>"Votre panier contient %s articles."
+
+<<lang>>sp
+clear_cart>>"vaciar carrito"
+continue_shopping>>"seguir comprando"
+proceed_to_checkout>>"pasar por la caja"
+product>>producto
+name>>nombre
+price>>precio
+quantity>>cantidad
+cart_count>>"Su cesta de la compra contiene %s artículos."
