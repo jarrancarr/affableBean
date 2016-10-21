@@ -1,0 +1,11 @@
+items>>items
+view_cart>>"view cart"
+<<lang>>cs
+items>>položek
+view_cart>>"Prohlédnout košík"
+<<lang>>fr
+items>>articles
+view_cart>>"Voir le panier"
+<<lang>>sp
+items>>artículos
+view_cart>>"ver carrito"

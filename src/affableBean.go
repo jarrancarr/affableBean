@@ -55,7 +55,7 @@ func addMenus() {
 
 func addTemplatePages() {
 	aBean.AddPage("", "head", "")
-	aBean.AddPage("", "header", "")
+	aBean.AddPage("header", "header", "")
 	aBean.AddPage("", "footer", "")
 	aBean.AddPage("category", "category", "")
 	aBean.AddPage("", "lang", "")
@@ -154,19 +154,19 @@ func addProductsSp(ecs *ecommerse.ECommerseService) {
 	ecs.AddProduct("Carnes", "empanadas de carne orgánica", "rolled in fresh herbs 2 patties (250g)", "organic meat patties.png", 229, 34)
 	ecs.AddProduct("Carnes", "jamón de Parma", "organic (70g)", "parma ham.png", 349, 11)
 	ecs.AddProduct("Carnes", "de las piernas de pollo", "free range (250g)", "chicken leg.png", 259, 61)
-	ecs.AddProduct("Carnes", "salchichas", "reduced fat, pork 3 sausages (350g)", "sausages.png", 359, 48)
+	ecs.AddProduct("Carnes", "salchichas", "reducción de grasa de cerdo, salchichas 3 (350g)", "sausages.png", 359, 48)
 
-	ecs.AddProduct("Lácteos", "leche", "semi skimmed (1L)", "milk.png", 170, 14)
-	ecs.AddProduct("Lácteos", "queso", "mild cheddar (330g)", "cheese.png", 239, 51)
-	ecs.AddProduct("Lácteos", "mantequilla", "unsalted (250g)", "butter.png", 109, 21)
-	ecs.AddProduct("Lácteos", "huevos de corral", "medium-sized (6 eggs)", "free range eggs.png", 176, 30)
+	ecs.AddProduct("Lácteos", "leche", "semidesnatada (1L)", "milk.png", 170, 14)
+	ecs.AddProduct("Lácteos", "queso", "cheddar suave (330g)", "cheese.png", 239, 51)
+	ecs.AddProduct("Lácteos", "mantequilla", "sin sal (250g)", "butter.png", 109, 21)
+	ecs.AddProduct("Lácteos", "huevos de corral", "talla media (6 huevos)", "free range eggs.png", 176, 30)
 
 	ecs.AddProduct("Panadería", "Pan de semillas de girasol", "600g", "sunflower seed loaf.png", 189, 8)
 	ecs.AddProduct("Panadería", "bagel de semilla de sésamo", "4 bagels", "sesame seed bagel.png", 119, 11)
-	ecs.AddProduct("Panadería", "pan de semillas de calabaza", "4 buns", "pumpkin seed bun.png", 115, 14)
-	ecs.AddProduct("Panadería", "galletas de chocolate", "contain peanuts (3 cookies)", "chocolate cookies.png", 239, 27)
+	ecs.AddProduct("Panadería", "pan de semillas de calabaza", "4 calabaza", "pumpkin seed bun.png", 115, 14)
+	ecs.AddProduct("Panadería", "galletas de chocolate", "contener cacahuetes (3 cookies)", "chocolate cookies.png", 239, 27)
 
-	ecs.AddProduct("Frutas y verduras", "Mazorca de maíz", "2 pieces", "corn on the cob.png", 159, 14)
+	ecs.AddProduct("Frutas y verduras", "Mazorca de maíz", "2 piezas", "corn on the cob.png", 159, 14)
 	ecs.AddProduct("Frutas y verduras", "grosellas rojas", "150g", "red currants.png", 249, 14)
 	ecs.AddProduct("Frutas y verduras", "brócoli", "500g", "broccoli.png", 129, 14)
 	ecs.AddProduct("Frutas y verduras", "sandía sin semillas", "250g", "seedless watermelon.png", 149, 14)

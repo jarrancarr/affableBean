@@ -2,12 +2,14 @@ Title>>The Affable Bean Green Grocer
 WelcomeText>>Welcome to the online home of the Affable Bean Green Grocer.
 Greeting>>Our unique home delivery service brings you fresh organic produce, dairy, meats, breads and other delicious and healthy items direct to your doorstep.
 <<lang>>cs
-Title>>The Affable Bean Green Grocer
+Title>>Přátelského Bean Green Obchod s potravinami
 WelcomeText>>Vítejte v našem domácím on-line obchodě Affable Bean Green Grocer.
 Greeting>>Naše jedinečná dodávková služba Vám zajistí dopravu čerstvých organických produktů, mléčných výrobků, uzenin, pečiva a dalších delikates a zdravých výroků až ke dveřím.
 <<lang>>fr
+Title>>Le Affable Green Bean Grocer
 WelcomeText>>Bienvenue à la maison en ligne du Affable Green Bean Grocer.
 Greeting>>Notre service de livraison à domicile vous apporte des produits frais bio, produits laitiers, viandes, pains et autres articles délicieux et sains directement à votre porte.
 <<lang>>sp
+Title>>El afable haba verde Ultramarinos
 WelcomeText>>Bienvenido a la página online de la afable haba verde tendero.
 Greeting>>Nuestro servicio de entrega a domicilio único que trae productos frescos orgánicos, productos lácteos, carnes, panes y otros artículos deliciosos y saludables dirigir a su puerta.

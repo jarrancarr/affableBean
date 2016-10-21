@@ -1,5 +1,6 @@
 Title>>The Affable Bean Green Grocer
 Category>>Meats Dairy Bakery "Fruits & Veg"
+addToCart>>"Add to Cart"
 0>>"organic meat patties" "parma ham" "chicken leg" sausages
 1>>milk cheese butter "free range eggs"
 2>>"sunflower seed loaf" "sesame seed bagel" "pumpkin seed bun" "chocolate cookies"
@@ -7,6 +8,7 @@ Category>>Meats Dairy Bakery "Fruits & Veg"
 <<lang>>cs
 Title>>The Affable Bean Green Grocer
 Category>>maso "mléčné výrobky" pečivo "ovoce a zeleniny"
+addToCart>>"Přidat do Košíku"
 0>>"kořeněné pirohy" pršut "kuřecí stehno" klobásy
 1>>mléko sýr máslo "vejce z volných pastvin"
 2>>"slunečnicový chléb" "sezamová bageta" "semínková dýňová" "čokoládové sušenky"
@@ -14,12 +16,14 @@ Category>>maso "mléčné výrobky" pečivo "ovoce a zeleniny"
 <<lang>>fr
 Title>>The Affable Bean Green Grocer
 Category>>Viandes Laitier Boulangerie "Fruits et Légumes"
+addToCart>>"ajouter au panier"
 0>>"galettes de viande bio" "jambon de parme" "cuisses de poulet" saucisses
 1>>"le lait" "de fromage" "de beurre" "œufs de libre parcours"
 2>>"Pain de graines de tournesol" "bagel aux graines de sésame" "bun de graines de citrouille" "des biscuits au chocolat"
 3>>"Maïs en épi" "groseilles rouges" brocoli "pastèque sans pépins"
 <<lang>>sp
 Category>>Carnes Lácteos Panadería "Frutas y verduras"
+addToCart>>"Añadir a la Cesta"
 0>>"empanadas de carne orgánica" "jamón de Parma" salchichas "de las piernas de pollo"
 1>>leche mantequilla queso "huevos de corral"
 2>>"Pan de semillas de girasol" "bagel de semilla de sésamo" "pan de semillas de calabaza" "galletas de chocolate"

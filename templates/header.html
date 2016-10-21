@@ -1,18 +1,22 @@
 <div id="header">
 	<div id="widgetBar">
 		{{page "lang"}}
-		<div class="headerWidget"></div>
-		<div class="headerWidget" id="viewCart">
-			<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
-			{{with $numItems := service "ecommerse" "cart" "count" }}
-				<span class="horizontalMargin">{{$numItems}} items</span>
+		{{with $numItems := service "ecommerse" "cart" "count" }}
+			<div class="headerWidget">
+				{{if eq $numItems "0"}}{{else}}
+					<a href="checkout" class="bubble">proceed to checkout ➟</a>
+				{{end}}
+			</div>
+			<div class="headerWidget" id="viewCart">
+				<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
+				<span class="horizontalMargin">{{$numItems}} {{body "items"}}</span>
 				{{if eq $numItems "0"}}{{else}}
 					<a class="bubble" href="viewCart">
-						view cart
+						{{body "view_cart"}}
 					</a>
 				{{end}}
-			{{end}}
-		</div>
+			</div>
+		{{end}}
 	</div>
 	<a href="/AffableBean/">
 		<img src="/img/logo.png" id="logo" alt="Affable Bean logo">

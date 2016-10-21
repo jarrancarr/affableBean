@@ -66,7 +66,7 @@
 										<form action="#" method="POST">
 			                        		<input type="hidden" name="product" value="{{.}}">
 			                        		<input type="hidden" name="postProcessingHandler" value="addToCart">
-			                        		<input type="submit" name="submit" value="add to cart">
+			                        		<input type="submit" name="submit" value='{{body "addToCart"}}'>
 			                    		</form>
 			                		</td>
 			            		</tr>

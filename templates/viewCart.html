@@ -25,7 +25,8 @@
             {{page "header"}}
 			<div id="singleColumn">
 				{{$line := body "cart_count"}}
-				<p>{{printf $line "4"}}</p>
+				{{$count := service "ecommerse" "cart" "count"}}
+				<p>{{printf $line $count}}</p>
 				<div id="actionBar">
 					<a href="viewCart?clear=true" class="bubble hMargin">{{body "clear_cart"}}</a>
 					<a href="category" class="bubble hMargin">{{body "continue_shopping"}}</a>
