@@ -24,21 +24,21 @@
         <div id="main">
             {{page "header"}}
 			<div id="singleColumn">
-				{{$line := body "cart_count"}}
+				{{$line := text "cart_count"}}
 				{{$count := service "ecommerse" "cart" "count"}}
 				<p>{{printf $line $count}}</p>
 				<div id="actionBar">
-					<a href="viewCart?clear=true" class="bubble hMargin">{{body "clear_cart"}}</a>
-					<a href="category" class="bubble hMargin">{{body "continue_shopping"}}</a>
-					<a href="checkout" class="bubble hMargin">{{body "proceed_to_checkout"}} &#x279f;</a>
+					<a href="viewCart?clear=true" class="bubble hMargin">{{text "clear_cart"}}</a>
+					<a href="category" class="bubble hMargin">{{text "continue_shopping"}}</a>
+					<a href="checkout" class="bubble hMargin">{{text "proceed_to_checkout"}} &#x279f;</a>
 				</div>
 				<h4 id="subtotal">subtotal:&euro; 4.09</h4>
 				<table id="cartTable">
 					<tr class="header">
-						<th>{{body "product"}}</th>
-						<th>{{body "name"}}</th>
-						<th>{{body "price"}}</th>
-						<th>{{body "quantity"}}</th>
+						<th>{{text "product"}}</th>
+						<th>{{text "name"}}</th>
+						<th>{{text "price"}}</th>
+						<th>{{text "quantity"}}</th>
 					</tr>
 					{{with $cart := get "ecommerse" "cart"}}
 						{{range $cart.Line}}

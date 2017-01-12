@@ -9,10 +9,10 @@
 			</div>
 			<div class="headerWidget" id="viewCart">
 				<img src="/img/cart.gif" alt="shopping cart icon" id="cart">
-				<span class="horizontalMargin">{{$numItems}} {{body "items"}}</span>
+				<span class="horizontalMargin">{{$numItems}} {{text "items"}}</span>
 				{{if eq $numItems "0"}}{{else}}
 					<a class="bubble" href="viewCart">
-						{{body "view_cart"}}
+						{{text "view_cart"}}
 					</a>
 				{{end}}
 			</div>

@@ -26,50 +26,52 @@
 			<div id="categoryLeftColumn">
 				{{$lang := session "language" }}
 				{{if eq $lang "en"}}
-					{{range index .Data "category:en"}}
+					{{range htmls "category:en"}}
 						{{.}}
 					{{end}}
 				{{end}}
 				{{if eq $lang "cs"}}
-					{{range index .Data "category:cs"}}
+					{{range htmls "category:cs"}}
 						{{.}}
 					{{end}}
 				{{end}}
 				{{if eq $lang "fr"}}
-					{{range index .Data "category:fr"}}
+					{{range htmls "category:fr"}}
 						{{.}}
 					{{end}}
 				{{end}}
 				{{if eq $lang "sp"}}
-					{{range index .Data "category:sp"}}
+					{{range htmls "category:sp"}}
 						{{.}}
 					{{end}}
 				{{end}}
 			</div>
 			<div id="categoryRightColumn">
 				{{with $pc := param "category"}}
-					{{with $category := body "Category" $pc}}
+					{{with $category := text "Category" $pc}}
 						<p id="categoryTitle">{{$category}}</p>
 						<table id="productTable">
-							{{range getList "category" }}
+							{{range list $pc}}
 								{{service "ecommerse" "product" "products" $category . }}
-								<tr class="lightBlue">
-			                		<td>
-			                    		<img src='/img/products/{{data $category "1" }}' alt='{{data $category "1" }}'>
-									</td>
-									<td>{{.}}
-				                    	<br>
-					                    <span class="smallText">{{data $category "0" }}</span>
-				                	</td>
-									<td>&euro; {{data $category "2" }}</td>
-									<td>
-										<form action="#" method="POST">
-			                        		<input type="hidden" name="product" value="{{.}}">
-			                        		<input type="hidden" name="postProcessingHandler" value="addToCart">
-			                        		<input type="submit" name="submit" value='{{body "addToCart"}}'>
-			                    		</form>
-			                		</td>
-			            		</tr>
+								{{with data $category}}
+									<tr class="lightBlue">
+				                		<td>
+				                    		<img src='/img/products/{{.ImageName }}' alt='{{.Description }}'>
+										</td>
+										<td>{{.Description}}
+					                    	<br>
+						                    <span class="smallText">{{.Name }}</span>
+					                	</td>
+										<td>&euro; {{ .Cost }}</td>
+										<td>
+											<form action="#" method="POST">
+				                        		<input type="hidden" name="product" value="{{.Name}}">
+				                        		<input type="hidden" name="postProcessingHandler" value="addToCart">
+				                        		<input type="submit" name="submit" value='{{text "addToCart"}}'>
+				                    		</form>
+				                		</td>
+				            		</tr>
+								{{end}}
 							{{end}}
 						</table>
 					{{end}}

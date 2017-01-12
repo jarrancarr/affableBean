@@ -6,6 +6,7 @@ import (
 	//"fmt"
 
 	"github.com/jarrancarr/website"
+	"github.com/jarrancarr/website/html"
 	"github.com/jarrancarr/website/ecommerse"
 )
 
@@ -24,8 +25,7 @@ func main() {
 }
 
 func setup() {
-	aBean = website.CreateSite("AffableBean", "localhost:8070","en")
-	aBean.AddParamList("languages", []string{"en", "cs", "fr", "sp"})
+	aBean = website.CreateSite("AffableBean", "localhost:8070")
 	addScripts();
 	addMenus();
 	addServices();
@@ -51,6 +51,7 @@ func addScripts() {
 
 func addMenus() {
 	aBean.AddParamTriggerHandler("language",chooseLanguage)
+	aBean.Data["languages"] = []string{"en", "cs", "fr", "sp"}
 }
 
 func addTemplatePages() {
@@ -187,10 +188,10 @@ func addPages() {
 	products := aBean.AddPage("products", "products", "/AffableBean/product")
 	products.AddBypassSiteProcessor("secure")
 	products.AddPostHandler("addToCart", ecs.AddToCart)
-	for _, lang := range aBean.ParamList["languages"] {
-		for index, cat := range products.Body[lang]["Category"] {
-			products.AddData("category:"+lang, `<a class="categoryButton"  href="/AffableBean/product?category=`+
-				strconv.Itoa(index)+`" ><span class="categoryText">`+cat+`</span></a>`)
+	for _, lang := range aBean.Data["languages"].([]string) {
+		for index, cat := range products.Text["Category"] {
+			products.Html.Add("category:"+lang, html.NewTag(`a class==categoryButton href==/AffableBean/product?category=`+
+				strconv.Itoa(index)).AppendChild(html.NewTag("span class==categoryText "+cat)))
 		}
 	}
 	ecs.AddPage("products", products)
