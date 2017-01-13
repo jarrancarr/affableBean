@@ -49,7 +49,7 @@
 								<td>
 									<form action="updateCart" method="post">
 										<input type="hidden" name="product" value="{{.Item.Name}}">
-										<input type="text" maxlength="2" size="2" value="1" name="quantity" style="margin:5px">
+										<input type="text" maxlength="2" size="2" value="{{.Quantity}}" name="quantity" style="margin:5px">
 										<input type="submit" name="submit" value="update">
 									</form>
 								</td>
